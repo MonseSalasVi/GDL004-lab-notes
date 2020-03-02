@@ -75,46 +75,16 @@ El proyecto debera de contener los siguientes archivos base de configuración, a
 
 ## Objetivos de Aprendizaje
 
-   El objetivo principal de este proyecto es aprender a construir una _interfaz web_ usando
-   el _framework_ elegido (En este caso vamos a preferir usar React). Este Framework resuelve el problema de: **cómo mantener la interfaz y el estado sincronizados**. Así que esta experiencia espera familiarizarte con el
+1. El objetivo principal de este proyecto es aprender a construir una _interfaz web_ usando
+   el _framework_ elegido (En este caso vamos a preferir usar React). Este Framework resuelve el problema de: **cómo mantener la interfaz y el estado
+   sincronizados**. Así que esta experiencia espera familiarizarte con el
    concepto de _estado de pantalla_, y cómo cada cambio sobre el estado se va a
-   ir reflejando en la interfaz (por ejemplo, cada vez que agregamos una
-   _nota_, la interfaz debe actualizar la lista de notas).
-
-1. La interfaz debe estar diseñada específicamente para correr en **tablets**.
-2. Este será nuestro primer proyecto utilizando la biblioteca de React. 
-3. Por ello nos concentraremos en entender las bases de React
-
-- #### React
-     - [ ] Que es React
-     - [ ] ReactDOM rendering
-     - [ ] Que es un React component
-     - [ ] JSX
-     - [ ] State and setState
-     - [ ] Manejo de eventos
-     - [ ] Props
-     - [ ] Refs
-     - [ ] Lifecycle Methods
-- ### React-router
-    - [ ] Route Config
-    - [ ] Links
-    - [ ] URL Parametros
-    - [ ] Navegación programatica
-    - [ ] Rutas protegidas
-    - [ ] Redirect
-- ### Firebase
-    - [ ] Firestore
-    - [ ] Firebase Auth
-    - [ ] Firebase security rules
-    - [ ] Uso de onSnapshot
-    - [ ] onAuthStateChanged
-- ### Buenas prácticas de desarrollo
-    - [ ] Modularización
-    - [ ] Nomenclatura / Semántica
-    - [ ] Linting
-  
-  
-
+   ir reflejando en la interfaz (por ejemplo, cada vez que agregamos un
+   _producto_ a un _pedido_, la interfaz debe actualizar la lista del pedido y
+   el total).
+2. Este será nuestro primer proyecto utilizando la biblioteca de React. Por ello nos concentraremos en entender las bases de React, como `estado`, `ciclos de vida`, `componentes`, `render` y como mantener sincronizados el estado con la vista de nuestra interfaz.
+3. La interfaz debe estar diseñada específicamente para correr en
+   **tablets**.
 
 ## Consideraciones Generales
 
@@ -122,11 +92,11 @@ Este proyecto se debe "resolver" de forma individual.
 
 Trabaja en una historia hasta terminarla antes de pasar a la siguiente. Trabaja hasta la historia que puedas en el tiempo especificado.
 
-La aplicación debe ser un _Single Page App_. Las notas seran realizadas desde una
+La aplicación debe ser un _Single Page App_. Los pedidos los tomaremos desde una
 _tablet_, pero **no queremos una app nativa**, sino una web app que sea
 **responsive** y pueda funcionar **offline**.
 
-Necesitamos pensar bien en el aspecto UX de quienes van a tomar las notas,
+Necesitamos pensar bien en el aspecto UX de quienes van a tomar los pedidos,
  el tamaño y aspecto de los botones, la visibilidad del estado actual del
  pedido, etc.
 
@@ -183,4 +153,5 @@ cd burger-queen
 * [deploy con gh-pages](https://medium.com/the-andela-way/how-to-deploy-your-react-application-to-github-pages-in-less-than-5-minutes-8c5f665a2d2a)
 * [Tu primera Progressive Web App - Google developers](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/?hl=es)
 * [Usando Service Workers - MDN](https://developer.mozilla.org/es/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+<<<<<<< HEAD
 * [What is a Single Page Application](https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58)
