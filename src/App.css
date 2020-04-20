@@ -32,7 +32,7 @@ body {
   background-color: azure;
   margin-bottom: 8px;
   font-size: 16px;
-  border-left: 8px solid aqua !important;
+  border-left: 8px solid aqua ;
 }
 .task {
   margin: 0;
