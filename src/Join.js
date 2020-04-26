@@ -13,14 +13,20 @@ const Join = ({history}) => {
     e.preventDefault();
     firebase
       .auth()
-      .createUserWithEmailAndPassword(email, password)
+      .setPersistence(firebase.auth.Auth.Persistence.SESSION)
+      .then(() => {
+        firebase
+        .createUserWithEmailAndPassword(email, password)
       .then(res => {
         console.log(res)
+        history.push('/reports')
         if (res.user) Auth.setLoggedIn(true);
       })
       .catch(e => {
         setErrors(e.message);
       });
+      })
+      
   };
   const handleGoogleLogin = e => {
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -75,4 +81,4 @@ const Join = ({history}) => {
   );
 };
 
-export default Join;
+export default withRouter(Join);
