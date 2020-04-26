@@ -11,11 +11,13 @@ const Join = ({history}) => {
   const Auth = useContext(AuthContext);
   const handleForm = e => {
     e.preventDefault();
+
     firebase
       .auth()
       .setPersistence(firebase.auth.Auth.Persistence.SESSION)
       .then(() => {
         firebase
+        .auth()
         .createUserWithEmailAndPassword(email, password)
       .then(res => {
         console.log(res)
@@ -47,7 +49,7 @@ const Join = ({history}) => {
   }
 
   return (
-    <div>
+    <div className='Join'>
       <h1>Join</h1>
       <form onSubmit={e => handleForm(e)}>
         <input

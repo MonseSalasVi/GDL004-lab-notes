@@ -9,7 +9,7 @@ import protectedRoutes from './protectedRoutes'
 import * as firebase from "firebase";
 import firebaseConfig from "./firebase.config";
 
-import ProtectedRouteHoc from './potectedRouteHoc'
+import ProtectedRouteHoc from './ProtectedRouteHoc'
 
 firebase.initializeApp(firebaseConfig);
 
@@ -18,16 +18,16 @@ export const AuthContext = React.createContext(null);
 
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(false);
-
-    function redSession(){
-      const user = window.sessionStorage.getItem(
-        `firebase:authUser:${firebase.Congig.apiKey}:[DEFAULT]`
-      );
-      if (user) setLoggedIn(true)
-    }
-    useEffect(()=> {
-      readSession()
-    },[])
+  
+  function readSession() {
+    const user = window.sessionStorage.getItem(
+			`firebase:authUser:${firebaseConfig.apiKey}:[DEFAULT]`
+		);
+		if (user) setLoggedIn(true)
+  }
+  useEffect(() => {
+    readSession()
+  }, [])
 
   return (
     <AuthContext.Provider value={{ isLoggedIn, setLoggedIn }}>
@@ -44,7 +44,7 @@ function App() {
                 path={route.path}
                 component={route.main}
                 exact={route.exact}
-                public={route.public}              
+                public={route.public}
               />
             ))}
             {routes.map(route => (
@@ -55,7 +55,6 @@ function App() {
                 component={route.main}
               />
             ))}
-            
           </Switch>
         </Router>
       </div>
