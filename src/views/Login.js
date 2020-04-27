@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../index";
-import * as firebase from 'firebase'
+import * as firebase from 'firebase/app'
 import { withRouter } from 'react-router-dom'
-
+import Header from '../Header'
 const Login = ({history}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -40,9 +40,8 @@ const Login = ({history}) => {
       .auth()
       .signInWithPopup(provider)
       .then(result => {
-        console.log(result)
+        if (result.user) Auth.setLoggedIn(true);
         history.push('/reports')
-        Auth.setLoggedIn(true)
       })
       .catch(e => setErrors(e.message))
     })
@@ -50,6 +49,7 @@ const Login = ({history}) => {
   }
   return (
     <div className='Join'>
+    <Header/>
       <h1>Login</h1>
       <form onSubmit={e => handleForm(e)}>
         <input

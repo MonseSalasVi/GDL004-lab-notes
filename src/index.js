@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import routes from "./routers";
-import Header from "./Header";
 import "./index.css";
 
 import protectedRoutes from './protectedRoutes'
@@ -34,7 +33,7 @@ function App() {
       Is logged in? {JSON.stringify(isLoggedIn)}
       <div className="App">
         <Router>
-          <Header isLoggedIn={isLoggedIn}/>
+         
 
           <Switch>
             {protectedRoutes.map(route => (
