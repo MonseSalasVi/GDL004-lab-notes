@@ -1,45 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
-import routes from "./routers";
+import routes from "./Routers/routers";
 import "./index.css";
+//import AuthContext, { AuthContextProvider } from './Components/AuthContext';
 
-import protectedRoutes from './protectedRoutes'
+import { AuthContextProvider } from './Components/AuthContext';
+import protectedRoutes from './Routers/protectedRoutes'
 import * as firebase from "firebase";
 import firebaseConfig from "./firebase.config";
 
-import ProtectedRouteHoc from './ProtectedRouteHoc'
+import ProtectedRouteHoc from './Routers/ProtectedRouteHoc'
 
 firebase.initializeApp(firebaseConfig);
 
-
-export const AuthContext = React.createContext(null);
-
 function App() {
-  const [isLoggedIn, setLoggedIn] = useState(false);
   
-  function readSession() {
-    const user = window.sessionStorage.getItem(
-			`firebase:authUser:${firebaseConfig.apiKey}:[DEFAULT]`
-		);
-		if (user) setLoggedIn(true)
-  }
-  useEffect(() => {
-    readSession()
-  }, [])
-
   return (
-    <AuthContext.Provider value={{ isLoggedIn, setLoggedIn }}>
-      Is logged in? {JSON.stringify(isLoggedIn)}
+    <AuthContextProvider>
+      
       <div className="App">
         <Router>
-         
-
           <Switch>
             {protectedRoutes.map(route => (
               <ProtectedRouteHoc
                 key={route.path}
-                isLoggedIn={isLoggedIn}
                 path={route.path}
                 component={route.main}
                 exact={route.exact}
@@ -57,7 +42,7 @@ function App() {
           </Switch>
         </Router>
       </div>
-    </AuthContext.Provider>
+    </AuthContextProvider>
   );
 }
 

@@ -1,12 +1,14 @@
 import React, { useState, useContext } from "react";
-import { AuthContext } from "../index";
 import * as firebase from 'firebase/app'
 import { withRouter } from 'react-router-dom'
-import Header from '../Header'
+import AuthContext from '../Components/AuthContext';
+import Header from '../Components/Header'
 const Login = ({history}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setErrors] = useState("");
+  const { isLoggedIn } = useContext(AuthContext);
+  console.log(isLoggedIn)
 
   const Auth = useContext(AuthContext);
   const handleForm = e => {
@@ -21,7 +23,7 @@ const Login = ({history}) => {
         .signInWithEmailAndPassword(email, password)
         .then(res => {
           if (res.user) Auth.setLoggedIn(true);
-          history.push('/reports')
+          history.push('/Home')
         })
         .catch(e => {
           setErrors(e.message);
@@ -41,7 +43,7 @@ const Login = ({history}) => {
       .signInWithPopup(provider)
       .then(result => {
         if (result.user) Auth.setLoggedIn(true);
-        history.push('/reports')
+        history.push('/Home')
       })
       .catch(e => setErrors(e.message))
     })
@@ -49,7 +51,7 @@ const Login = ({history}) => {
   }
   return (
     <div className='Join'>
-    <Header/>
+    
       <h1>Login</h1>
       <form onSubmit={e => handleForm(e)}>
         <input
@@ -57,14 +59,14 @@ const Login = ({history}) => {
           onChange={e => setEmail(e.target.value)}
           name="email"
           type="email"
-          placeholder="email"
+          placeholder="EMAIL"
         />
         <input
           onChange={e => setPassword(e.target.value)}
           name="password"
           value={password}
           type="password"
-          placeholder="password"
+          placeholder="PASSWORD"
         />
         <hr />
         <button onClick={() => signInWithGoogle()} className="googleBtn" type="button">
@@ -77,6 +79,7 @@ const Login = ({history}) => {
         <button type="submit">Login</button>
         <span>{error}</span>
       </form>
+      <Header/>
     </div>
   );
 };
