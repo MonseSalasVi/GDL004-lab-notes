@@ -3,11 +3,7 @@ HTML{
   background-repeat:no-repeat ;
   height: 100%;
 }
-body{
-  padding:0;
-  margin:0;
- 
-}
+
 .App {
   font-family: sans-serif;
   display: flex;
@@ -108,7 +104,6 @@ button[type="submit"] {
 }
 
 .nav-menu{
-  display: flex;
   text-decoration: none;
   list-style-type: none;
   background-color:rgba(149,173,190,0.4);
@@ -131,7 +126,9 @@ button[type="submit"] {
   border-radius: 10px;
   font-size: 15px;
   color: black;
+ 
 }
+
 .menuBtn img{
   width: 16px;
   height: 16px;
@@ -151,23 +148,33 @@ button[type="submit"] {
   display: flex;
   flex-direction:column;
   border: 2px solid rgba(0,0,0,0.5) ;
+  border-radius: 5px;
   padding: 16px;
 }
-/*
+
+.ContainerNoteFiles{
+display:flex;
+
+}
+
+
 .files{
   font-size: 25px;
   height: 100%;
+  min-height: 300px;
   width: 250px ;
-  border: 2px solid green;
+  background-color:rgba(149,173,190,0.4);
+  border-radius: 5px ;
+  border: solid 2px rgba(149,173,190,0.8);
 }
 
-.container-note{
+/* .container-note{
  display: flex;
  flex-direction: column;
  height: 100%;
  width: 70%;
  border: 2px solid red;
-}
+}  
 .Menu{
   list-style-type: none;
   margin: 0;
@@ -175,7 +182,12 @@ button[type="submit"] {
   overflow: hidden;
   background-color: #333;
 } */
-/* .new-task{
-  height: 10px;
-  width: 150em;
-} */
+.new-task{
+  margin-left: 6px;
+  height: 300px;
+  width: 500px;
+  font-size: 25px;
+  background-color:rgba(149,173,190,0.4);
+  border-radius: 5px ;
+  border: solid 2px rgba(149,173,190,0.8);
+}

@@ -5,7 +5,7 @@ export default() => {
     return ( 
         <ul className="nav-menu"> 
     
-      <li> <input type="text" placeholder="Search.." className="search"/></li>
+      <li> <h2> User</h2> </li>
       <li> <button className= "menuBtn" >
             <img 
             src="https://raw.githubusercontent.com/MonseSalasVi/GDL004-lab-notes/develop/src/img/menu.png" 
@@ -13,6 +13,9 @@ export default() => {
 
             /> Menu  
        </button>
+       {/* <ul className="dropdown-content">
+           <li className= "sub-menu-salir"><button className= "salirbtn" > Salir </button> </li>
+       </ul> */}
        </li>
 
     </ul>

@@ -3,11 +3,14 @@ import React from 'react'
 
 export default () => {
   return (
-    
-    <div className="container-note">
-    <input type="text" placeholder="title" className="title-note"/>
-    <input type="text" placeholder="new note" className="new-task"/>
-   
-   </div>
+    <>
+      <div className="container-note">
+      <textarea className= "new-task" placeholder="New note"></textarea>
+    </div>
+   </>
   )
 }
+
+
+// "title-note"/>
+// new-task"/>
