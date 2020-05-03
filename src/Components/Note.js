@@ -1,16 +1,29 @@
-import React from 'react'
+import React, {Component} from 'react'
+import './Note.css';
+//import firebase, {firestore}from 'firebase'
+//import { render } from '@testing-library/react'
 
-
-export default () => {
-  return (
-    <>
-      <div className="container-note">
-      <textarea className= "new-task" placeholder="New note"></textarea>
+class Note extends Component{
+  constructor(props){
+    super(props);
+    this.noteContent = props.noteContent;
+    this.noteid = props.noteid;    
+  }
+  handleRemove(id){
+    alert('remove:', id)
+  }
+  render(){
+    return(
+    <div className="Note">
+    <span
+    onClick= { ()=> this.handleRemove(this.noteid) }
+    > &times;</span>
+    {/* <li > {this.noteid}</li> */}
+    <p>{this.noteContent}</p>
     </div>
-   </>
-  )
+    
+    )
+  }
 }
+export default Note;
 
-
-// "title-note"/>
-// new-task"/>

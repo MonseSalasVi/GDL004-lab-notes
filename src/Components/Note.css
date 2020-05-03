@@ -1,0 +1,7 @@
+.Note {
+    background-color:rgba(149,173,190,0.4);
+    color: black;
+    margin-top:10px;
+    padding: 20px;
+    border: 2px solid green;
+}

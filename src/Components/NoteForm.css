@@ -1,0 +1,24 @@
+.NoteForm textarea[type="text"]{
+  margin-left: 6px;
+  height: 300px;
+  width: 500px;
+  font-size: 25px;
+  background-color:rgba(149,173,190,0.4);
+  border-radius: 5px ;
+  border: solid 2px rgba(149,173,190,0.8);
+}
+
+.NoteForm button{
+    width: 125px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border:1px solid black;
+  padding: 7px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.NoteForm button:hover{
+    background-color: black;
+    color:white;
+
+}

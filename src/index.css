@@ -136,12 +136,12 @@ button[type="submit"] {
   margin: 0 5px;
   vertical-align: middle;
 }
-.search{
+/* .search{
   font-size: 15px;
   background:rgba(255, 255, 255, 0.6);
   border: solid 2px rgba(255, 255, 255, 0.5);
-}
- .Container-Home{
+} */
+ /* .Container-Home{
   height: 100%;
   width: 100%;
   border: 2px solid white;
@@ -155,18 +155,18 @@ button[type="submit"] {
 .ContainerNoteFiles{
 display:flex;
 
-}
+} */
 
 
-.files{
-  font-size: 25px;
-  height: 100%;
+/* .files{
+  font-size: 15px;
+  /* height: 100%;
   min-height: 300px;
-  width: 250px ;
-  background-color:rgba(149,173,190,0.4);
+  width: 250px ; */
+  /* background-color:rgba(149,173,190,0.4);
   border-radius: 5px ;
   border: solid 2px rgba(149,173,190,0.8);
-}
+} */ 
 
 /* .container-note{
  display: flex;
@@ -182,7 +182,7 @@ display:flex;
   overflow: hidden;
   background-color: #333;
 } */
-.new-task{
+/* .new-task{
   margin-left: 6px;
   height: 300px;
   width: 500px;
@@ -190,4 +190,19 @@ display:flex;
   background-color:rgba(149,173,190,0.4);
   border-radius: 5px ;
   border: solid 2px rgba(149,173,190,0.8);
+} */
+
+.notes-header .notes-body .notes-footer{
+  border: 2px solid green;
+  display:flex;
+  width: 500px;
+  background-color:rgba(149,173,190,0.4);
+  border: 2px solid green;
+}
+.files-container{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid blue;
+  width: 50%;
+  background-color:rgba(149,173,190,0.4);
 }
