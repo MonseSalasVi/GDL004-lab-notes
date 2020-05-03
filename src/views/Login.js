@@ -8,9 +8,10 @@ const Login = ({history}) => {
   const [password, setPassword] = useState("");
   const [error, setErrors] = useState("");
   const { isLoggedIn } = useContext(AuthContext);
+  import Auth from '../Router/example'
   console.log(isLoggedIn)
 
-  const Auth = useContext(AuthContext);
+  // const Auth = useContext(AuthContext);
   const handleForm = e => {
     e.preventDefault();
 
@@ -79,7 +80,7 @@ const Login = ({history}) => {
         <button type="submit">Login</button>
         <span>{error}</span>
       </form>
-      <Header/>
+      {/* <Header/> */}
     </div>
   );
 };

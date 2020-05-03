@@ -10,7 +10,7 @@ const Join = ({history}) => {
   const [password, setPassword] = useState("");
   const [error, setErrors] = useState("");
 
-  const Auth = useContext(AuthContext);
+  // const Auth = useContext(AuthContext);
   const handleForm = e => {
     e.preventDefault();
 
@@ -83,7 +83,7 @@ const Join = ({history}) => {
 
         <span>{error}</span>
       </form>
-      <Header/>
+      {/* <Header/> */}
     </div>
   );
 };
