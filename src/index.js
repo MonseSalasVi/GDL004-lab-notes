@@ -12,8 +12,8 @@ import firebaseConfig from "./firebase.config";
 
 import ProtectedRouteHoc from './Routers/ProtectedRouteHoc'
 
-firebase.initializeApp(firebaseConfig);
-
+const app = firebase.initializeApp(firebaseConfig);
+export default app
 function App() {
   
   return (

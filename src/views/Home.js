@@ -1,7 +1,9 @@
-import React, {Component} from 'react'
-// import firebase from 
-
-// import firebase from 'firebase'
+import React, {Component} from 'react';
+// import firebase from 'firebase';
+// import db from '../firebase.config'
+// import app from '../index'
+// import  'firebase/database';
+// import AuthContext from "../Components/AuthContext";
 
 import Note from '../Components/Note'
 import NoteForm from '../Components/Noteform'
@@ -15,9 +17,10 @@ class Home extends Component {
       ]
     };
     this.addNote = this.addNote.bind(this)
+    //this.db = this.AuthContext.database().ref().child('notes');
   }
 
-  remiveNote(){
+  removeNote(){
 
   }
   addNote(note){
