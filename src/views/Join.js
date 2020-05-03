@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import AuthContext from "../Components/AuthContext";
 import firebase from 'firebase/app'
-
 import { withRouter } from 'react-router-dom';
 import Header from '../Components/Header'
 

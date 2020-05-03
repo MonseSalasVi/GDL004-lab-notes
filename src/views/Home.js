@@ -1,7 +1,9 @@
-import React, {Component} from 'react'
-// import firebase from 
+import React, {Component} from 'react';
+import firebase from 'firebase/app';
+import firebaseConfig from '../firebase.config';
+import AuthContext from '../Components/AuthContext';
 
-// import firebase from 'firebase'
+
 
 import Note from '../Components/Note'
 import NoteForm from '../Components/Noteform'
@@ -10,23 +12,38 @@ class Home extends Component {
     super();
     this.state ={
       notes: [
-        {noteid: 1, noteContent: 'note 1'},
-        {noteid: 2, noteContent: 'note 2'}
+        // {noteid: 1, noteContent: 'note 1'},
+        // {noteid: 2, noteContent: 'note 2'}
       ]
     };
+    //this.addNote = this.addNote.bind(this)
+    
+    this.db = firebase.database().ref().child('notes')
     this.addNote = this.addNote.bind(this)
+  };
+  componentDidMount() {
+    const {notes} =  this.state;
+    this.db.on('child_added', snap => {
+      notes.push({
+        noteId: snap.key,
+        noteContent: snap.val().noteContent
+      })
+      this.setState({notes});
+    });
   }
 
-  remiveNote(){
+
+  removeNote(){
 
   }
   addNote(note){
-    let {notes} = this.state;
-    notes.push({
-      noteid: notes.lenght + 1,
-      noteContent: note
-    });
-    this.setState( { notes })
+    // let {notes} = this.state;
+    // notes.push({
+    //   noteid: notes.lenght + 1,
+    //   noteContent: note
+    // });
+    // this.setState( { notes })
+    this.db.push().set({noteContent:note});
 
   }
   
