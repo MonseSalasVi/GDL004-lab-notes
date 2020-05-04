@@ -10,7 +10,7 @@ const ProtectedRouteHoc = ({ component: Component, ...rest }) => {
     const { isLoggedIn } = useContext(AuthContext);
 
     if(isLoggedIn||rest.public){
-        console.log('/Home')
+        //console.log('/Home')
         
         return(
             <Route

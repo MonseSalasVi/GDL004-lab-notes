@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import firebase from 'firebase/app';
-import firebaseConfig from '../firebase.config';
-import AuthContext from '../Components/AuthContext';
-
-
+// import firebaseConfig from '../firebase.config';
+// import AuthContext from '../Components/AuthContext';
 
 import Note from '../Components/Note'
 import NoteForm from '../Components/Noteform'
@@ -11,40 +9,55 @@ class Home extends Component {
   constructor() {
     super();
     this.state ={
-      notes: [
-        // {noteid: 1, noteContent: 'note 1'},
-        // {noteid: 2, noteContent: 'note 2'}
-      ]
+      notes: [  ]
     };
     //this.addNote = this.addNote.bind(this)
     
-    this.db = firebase.database().ref().child('notes')
+    this.notesCollection = firebase.firestore().collection('notes')
+    this.currentUser = firebase.auth().currentUser;
+
     this.addNote = this.addNote.bind(this)
   };
-  componentDidMount() {
-    const {notes} =  this.state;
-    this.db.on('child_added', snap => {
+  componentDidMount(note) {
+    
+}
+    //this.ref.where("userEamil", "==", this.currentUser).get().then(
+
+    // )
+    // ({
+    //   noteContent: notes,
+    // }).then((result) => {
+    //   console.log('trae las notas')
+    // })
+    // .catch((err)=> {
+
+    // })
+  
+    /*this.db.on('child_added', snap => {
       notes.push({
         noteId: snap.key,
         noteContent: snap.val().noteContent
       })
       this.setState({notes});
-    });
-  }
+    });*/
+  
+//entender que es firestore y realtime
 
-
+// No volvere a ver vidoes de hace 4 a;os 
   removeNote(){
 
   }
   addNote(note){
-    // let {notes} = this.state;
-    // notes.push({
-    //   noteid: notes.lenght + 1,
-    //   noteContent: note
-    // });
-    // this.setState( { notes })
-    this.db.push().set({noteContent:note});
+    //let {notes} = this.state;
+    this.notesCollection.add({
+      userEmail: this.currentUser.email,
+      noteContent: note
+    }).then((result) => {
+      console.log('created',result)
+    })
+    .catch((err)=> {
 
+    })
   }
   
   render() {
