@@ -18,21 +18,25 @@ class Home extends Component {
 
     this.addNote = this.addNote.bind(this)
   };
+
   componentDidMount(note) {
+    this.notesCollection.get({
     
+    }).then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+          console.log(doc.id, " => ", doc.data());
+          // note.push({
+          //   noteId: doc.id,
+          //   noteContent: doc.data('noteContent')
+          // })
+  })
+      
+  })
+  .catch((err)=> {
+console.log('salio mal')
+  })
 }
-    //this.ref.where("userEamil", "==", this.currentUser).get().then(
 
-    // )
-    // ({
-    //   noteContent: notes,
-    // }).then((result) => {
-    //   console.log('trae las notas')
-    // })
-    // .catch((err)=> {
-
-    // })
-  
     /*this.db.on('child_added', snap => {
       notes.push({
         noteId: snap.key,
