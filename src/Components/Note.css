@@ -2,6 +2,7 @@
     background-color:rgba(149,173,190,0.4);
     color: black;
     margin-top:10px;
-    padding: 20px;
+    padding: 5 px;
     border: 2px solid green;
+    width: 300px;
 }

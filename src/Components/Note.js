@@ -13,13 +13,14 @@ class Note extends Component{
     alert('remove:', id)
   }
   render(){
+    console.log('print note', this.props.noteContent)
     return(
-    <div className="Note">
-    <span
-    onClick= { ()=> this.handleRemove(this.noteid) }
-    > &times;</span>
-    {/* <li > {this.noteid}</li> */}
-    <p>{this.noteContent}</p>
+    <div key={this.props.key} className="Note">
+      <span
+      onClick= { ()=> this.handleRemove(this.noteid) }
+      > &times;</span>
+      {/* <li > {this.noteid}</li> */}
+      <p>{this.noteContent}</p>
     </div>
     
     )

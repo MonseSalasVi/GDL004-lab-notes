@@ -136,6 +136,10 @@ button[type="submit"] {
   margin: 0 5px;
   vertical-align: middle;
 }
+.notes-container{
+  display: flex;
+  
+}
 /* .search{
   font-size: 15px;
   background:rgba(255, 255, 255, 0.6);
@@ -195,7 +199,7 @@ display:flex;
 .notes-header .notes-body .notes-footer{
   border: 2px solid green;
   display:flex;
-  width: 500px;
+  width: 00px;
   background-color:rgba(149,173,190,0.4);
   border: 2px solid green;
 }

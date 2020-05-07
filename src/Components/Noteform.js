@@ -8,6 +8,7 @@ class NoteForm extends Component {
         this.addNote= this.addNote.bind(this);
     }
     addNote(){
+        console.log ( 'noteform', this.textarea.value)
         this.props.addNote(this.textarea.value);
         this.textarea.value = '';
         this.textarea.focus();

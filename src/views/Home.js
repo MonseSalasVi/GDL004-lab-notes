@@ -9,32 +9,67 @@ class Home extends Component {
   constructor() {
     super();
     this.state ={
-      notes: [  ]
+      notes: [ 
+        // userEmail= '',
+        // noteContent= '',
+        // docid = '',
+       ]
     };
     //this.addNote = this.addNote.bind(this)
     
     this.notesCollection = firebase.firestore().collection('notes')
     this.currentUser = firebase.auth().currentUser;
 
-    this.addNote = this.addNote.bind(this)
+    
   };
 
-  componentDidMount(note) {
-    this.notesCollection.get({
-    
-    }).then(function(querySnapshot) {
-      querySnapshot.forEach(function(doc) {
-          console.log(doc.id, " => ", doc.data());
-          // note.push({
-          //   noteId: doc.id,
-          //   noteContent: doc.data('noteContent')
-          // })
-  })
+  dataCollection = () => {
+    const setState = this.setState
+    firebase.firestore().collection('notes').onSnapshot((querySnapshot)=> { 
+      const newArrayNote = []
       
-  })
-  .catch((err)=> {
-console.log('salio mal')
-  })
+      querySnapshot.forEach((doc) => {
+        console.log(doc.data());
+        newArrayNote.push(doc.data())
+    
+      })
+      this.setState({notes: newArrayNote})
+
+    })
+    // .then(querySnapshot => {
+    //   let newArrayNote = []
+    //   querySnapshot.forEach((doc) => {
+    //     newArrayNote.push(doc.data())
+
+    //     console.log(doc.data());
+    //   })
+    //   console.log(newArrayNote);
+    //   this.setState({notes: newArrayNote})
+      
+    // })
+  }
+
+  componentDidMount() {
+    this.dataCollection()
+  //   this.notesCollection.get()
+  //   .then(function(querySnapshot) {
+  //     let newArrayNote = []
+  //     querySnapshot.forEach(function(doc) {
+  //         console.log(doc.id, " => ", doc.data(), "=>", doc.data().userEmail ,"=>", doc.data().noteContent);
+  //       // const note = {
+  //       //   doc.id, 
+  //       //   doc.
+  //       //}
+  //       newArrayNote.push(doc.data())
+     
+  //     })
+  //   console.log(newArrayNote)  
+    
+  //   // this.setState({notes:newArrayNote})
+  //   }).catch((err)=> {
+  //  console.log('salio mal', err)
+  // })
+  // console.log(this.state.notes)
 }
 
     /*this.db.on('child_added', snap => {
@@ -51,13 +86,13 @@ console.log('salio mal')
   removeNote(){
 
   }
-  addNote(note){
+  addNote = (note) => {
     //let {notes} = this.state;
     this.notesCollection.add({
       userEmail: this.currentUser.email,
       noteContent: note
     }).then((result) => {
-      console.log('created',result)
+      console.log('created',note, result)
     })
     .catch((err)=> {
 
@@ -65,6 +100,7 @@ console.log('salio mal')
   }
   
   render() {
+    //console.log(this.state.notes)
   return(
     <div>
       <ul className="nav-menu"> 
@@ -83,11 +119,12 @@ console.log('salio mal')
        <p className="notes-body"> notes body</p>
        <ul></ul>
          {this.state.notes.map(note => {
+           console.log('map', note)
            return (
-            <Note
+            <Note key={note.id}
               noteContent = {note.noteContent}
-              noteid = {note.noteid}
-              key={note.noteid}
+              noteid = {note.id}
+              userEmail={note.userEmail}
 
             />
 
