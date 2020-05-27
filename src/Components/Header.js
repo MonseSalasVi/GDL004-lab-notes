@@ -1,9 +1,9 @@
-import React from "react";
-import routes from "../Routers/routers";
-import { Link } from "react-router-dom";
+import React from 'react';
+import routes from '../Routers/routers';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
-  <ul className="nav">
+  <ul className='nav'>
     {routes.map((route, i) => (
       <li key={i}>
         <Link to={route.path}>{route.name}</Link>

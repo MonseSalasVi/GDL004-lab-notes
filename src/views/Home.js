@@ -3,6 +3,8 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import Note from '../Components/Note';
 import NoteForm from '../Components/Noteform';
+import Box from '@material-ui/core/Box';
+import './login.css';
 class Home extends Component {
   constructor() {
     super();
@@ -40,6 +42,7 @@ class Home extends Component {
   };
 
   componentDidMount() {
+    console.log('didmount');
     this.dataCollection();
   }
   removeNote(noteid) {
@@ -62,7 +65,7 @@ class Home extends Component {
   render() {
     //console.log(this.state.notes)
     return (
-      <div>
+      <Box>
         <ul className='nav-menu'>
           <li>
             {' '}
@@ -75,15 +78,16 @@ class Home extends Component {
                 src='https://raw.githubusercontent.com/MonseSalasVi/GDL004-lab-notes/develop/src/img/menu.png'
                 alt='logo'
               />{' '}
-              Menu
-            </button>
-          </li>
-        </ul>
-        {/* div que contiene notas y files */}
+              Menu{' '}
+            </button>{' '}
+          </li>{' '}
+        </ul>{' '}
+        {/* div que contiene notas y files */}{' '}
         <div className='notes-container'>
-          {/*Div de files  */}
+          {' '}
+          {/*Div de files  */}{' '}
           <div className='notes-header'>
-            <p className='notes-body'> notes body </p> <ul> </ul>
+            <p className='notes-body'> notes body </p> <ul> </ul>{' '}
             {this.state.notes.map((note) => {
               //console.log('map', note);
               return (
@@ -94,13 +98,13 @@ class Home extends Component {
                   userEmail={note.userEmail}
                 />
               );
-            })}
-          </div>
+            })}{' '}
+          </div>{' '}
           <div className='notes-footer'>
-            <NoteForm addNote={this.addNote} removeNote={this.Note} />
-          </div>
-        </div>
-      </div>
+            <NoteForm addNote={this.addNote} removeNote={this.Note} />{' '}
+          </div>{' '}
+        </div>{' '}
+      </Box>
     );
   }
 }

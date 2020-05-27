@@ -13,8 +13,8 @@ class Note extends Component {
   handleRemove(id) {
     const response = window.confirm('Are you sure?');
     if (response) {
-      this.noteid.removeNote(id);
-      console.log(id);
+      //removeNote(id);
+      console.log(this.noteid);
     }
   }
   render() {
