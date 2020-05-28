@@ -13,38 +13,10 @@ HTML {
   padding: 50px;
 }
 
-/*
-
-h1 {
+. h1 {
   margin: 0 0 25px 0;
   text-align: left;
   padding: 20px;
-}
-
-
-
-
-
-button[type="submit"] {
-
-  color: black;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 10px;
-  text-transform: uppercase;
-  padding: 10px;
-  width: 225px;
-  margin-top: 0px;
-}
-
-.googleBtn {
-  width: 225px;
-  margin: 0 0 25px 0;
-  display: flex;
-  justify-content: center;
-  font-size: 16px;
-  margin-top: 40px;
-  font-weight: 500;
 }
 
 
@@ -63,7 +35,7 @@ button[type="submit"] {
   padding: 5px;
 }
 
-.menuBtn {
+/* .menuBtn {
   max-width: 200px;
   width: auto;
   border: none;
@@ -75,20 +47,21 @@ button[type="submit"] {
   font-size: 15px;
   color: black;
 
-}
+} */
 
-.menuBtn img {
+/* .menuBtn img {
   width: 16px;
   height: 16px;
   padding: 0;
   margin: 0 5px;
   vertical-align: middle;
-}
+} */
 
 .notes-container {
   display: flex;
 
-} */
+}
+
 
 /* .search{
   font-size: 15px;

@@ -4,7 +4,8 @@ import 'firebase/firestore';
 import Note from '../Components/Note';
 import NoteForm from '../Components/Noteform';
 import Box from '@material-ui/core/Box';
-import './login.css';
+
+import Navbar from '../Components/Navbar';
 class Home extends Component {
   constructor() {
     super();
@@ -66,7 +67,8 @@ class Home extends Component {
     //console.log(this.state.notes)
     return (
       <Box>
-        <ul className='nav-menu'>
+        <Navbar />
+        {/* <ul className='nav-menu'>
           <li>
             {' '}
             <h2> User </h2>{' '}
@@ -81,7 +83,7 @@ class Home extends Component {
               Menu{' '}
             </button>{' '}
           </li>{' '}
-        </ul>{' '}
+        </ul>{' '} */}
         {/* div que contiene notas y files */}{' '}
         <div className='notes-container'>
           {' '}
