@@ -55,7 +55,6 @@ const Join = ({ history }) => {
       <h1> Form Account </h1>{' '}
       <form onSubmit={(e) => handleForm(e)}>
         <TextField
-          id='standard-basic'
           label='Email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -63,7 +62,6 @@ const Join = ({ history }) => {
           type='email'
         />
         <TextField
-          id='standard-basic'
           label='Password'
           onChange={(e) => setPassword(e.target.value)}
           name='password'
@@ -84,7 +82,7 @@ const Join = ({ history }) => {
           Register With Google{' '}
         </Button>{' '}
         <div className='espacio'></div>
-        <Button variant='outlined' type='submit'>
+        <Button className='googleBtn' variant='outlined' type='submit'>
           {' '}
           Login{' '}
         </Button>{' '}

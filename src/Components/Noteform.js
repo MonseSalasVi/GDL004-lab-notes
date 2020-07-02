@@ -23,6 +23,7 @@ class NoteForm extends Component {
           placeholder='New Note'
           type='text'
         />
+
         <button onClick={this.addNote}>add Note</button>
       </div>
     );

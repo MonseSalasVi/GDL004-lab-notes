@@ -13,16 +13,13 @@ HTML {
   padding: 50px;
 }
 
-. h1 {
+h1 {
   margin: 0 0 25px 0;
   text-align: left;
   padding: 20px;
 }
 
-
-
-
-.nav-menu {
+/* .nav-menu {
   text-decoration: none;
   list-style-type: none;
   background-color: rgba(149, 173, 190, 0.4);
@@ -33,7 +30,7 @@ HTML {
   width: 100%;
   height: 40px;
   padding: 5px;
-}
+} */
 
 /* .menuBtn {
   max-width: 200px;
@@ -119,7 +116,7 @@ display:flex;
   border: solid 2px rgba(149,173,190,0.8);
 } */
 
-.notes-header .notes-body .notes-footer {
+/* .notes-header .notes-body .notes-footer {
   border: 2px solid green;
   display: flex;
   width: 00px;
@@ -133,4 +130,4 @@ display:flex;
   border: 2px solid blue;
   width: 50%;
   background-color: rgba(149, 173, 190, 0.4);
-}
+} */

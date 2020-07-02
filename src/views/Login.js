@@ -57,7 +57,6 @@ const Login = ({ history }) => {
       <h1> Login </h1>{' '}
       <form onSubmit={(e) => handleForm(e)}>
         <TextField
-          id='standard-basic'
           label='Email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -65,14 +64,13 @@ const Login = ({ history }) => {
           type='email'
         />
         <TextField
-          id='standard-basic'
           label='Password'
           onChange={(e) => setPassword(e.target.value)}
           name='password'
           value={password}
           type='password'
         />
-        <div className='espacio'></div>
+        <div className='espacio'> </div>{' '}
         <div>
           <Button
             variant='outlined'
@@ -84,16 +82,16 @@ const Login = ({ history }) => {
               src='https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg'
               alt='logo'
             />
-            Login With Google
-          </Button>
-          <div className='espacio'></div>
-          <Button variant='outlined' color='lightBlue' type='submit'>
+            Login With Google{' '}
+          </Button>{' '}
+          <div className='espacio'> </div>{' '}
+          <Button className='googleBtn' variant='outlined' type='submit'>
             {' '}
             Login{' '}
           </Button>{' '}
-          <span> {error} </span>
-        </div>
-      </form>
+          <span> {error} </span>{' '}
+        </div>{' '}
+      </form>{' '}
       <Header />
     </div>
   );
