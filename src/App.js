@@ -1,60 +1,24 @@
-  
-import React, { Component } from "react";
-import "./App.css";
-import Title from './components/title';
-import Input from './components/input';
-import TaskList from './components/task-list';
-import Layout from './components/layout';
+import React from 'react';
+import './index.css';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from './views/Home'
+import SignUp from './views/SignUp'
+import Login from './views/Login.jsx'
+import {AuthProvider} from './firebase/Auth'
+import PrivateRoute from "./PrivateRout/PrivateRoute"
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      newTask: "",
-      tasks: []
-    };
-  }
-
-  handleTaskChange = event => {
-    this.setState({
-      newTask: event.target.value
-    });
-  };
-
-  handleSubmit = event => {
-    event.preventDefault();
-    let newTasks = this.state.tasks;
-    newTasks.push(this.state.newTask);
-    this.setState({
-      newTask: "",
-      tasks: newTasks
-    });
-  };
-
-  handleDelete = (id) => {
-    let newTasks = this.state.tasks;
-    newTasks.splice(id, 1)
-    this.setState({
-      tasks: newTasks,
-    })
-  }
-
-  render() {
-    return (
-      <Layout>
-        <Title/>
-        <Input 
-          handleSubmit={this.handleSubmit}
-          handleTaskChange={this.handleTaskChange}
-          value={this.state.newTask}
-        />
-        <TaskList 
-          tasks={this.state.tasks}
-          handleDelete={this.handleDelete}
-        />
-      </Layout>
-    );
-  }
+const App = () => {
+  return (
+    <AuthProvider>
+    <Router>
+      <div className="App" >
+        <PrivateRoute exact path="/" component ={Home}/>
+        <Route exact path="/Login" component ={Login}/>
+        <Route exact path="/SignUp" component ={SignUp}/>
+      </div>
+    </Router>
+    </AuthProvider>
+  );
 }
 
 export default App;
